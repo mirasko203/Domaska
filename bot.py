@@ -84,7 +84,7 @@ def check_limits(user_id):
             (user_id,)
         ).fetchone()
 
-        if row and time.time() - row[0] < 60:
+        if row and time.time() - row[0] < 10:
             return False, "⏳ Подожди 2 минуты между запросами"
 
         sql.execute(
@@ -136,7 +136,7 @@ def tariff_selected(call):
     pending_checks[call.message.chat.id] = tariff
     bot.send_message(
         call.message.chat.id,
-        f"Ты выбрал «{tariff}» ({TARIFFS[tariff]['price']}₸)\nОтправь чек или скрин оплаты"
+        f"Ты выбрал «{tariff}» ({TARIFFS[tariff]['price']}₸)\n Отправьте переводом  на номер +77066062436 на Каспий банк.Отправь чек или скрин оплаты"
     )
 
 # ================== ЧЕК ==================
@@ -275,4 +275,5 @@ def ai(msg):
 
 # ================== ЗАПУСК ==================
 bot.infinity_polling()
+
 
