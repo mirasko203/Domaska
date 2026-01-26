@@ -7,7 +7,7 @@ import datetime
 
 # ================== НАСТРОЙКИ ==================
 BOT_TOKEN = "8544083372:AAF3cZ4jEtafdG2l6GBh7y2WkwTvkFflAmk"
-WEBHOOK_URL = "https://n8n.devart.kz/webhook-test/telegram-ai"
+WEBHOOK_URL = "https://n8n.devart.kz/webhook/telegram-ai"
 ADMIN_ID = 1577850433
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -275,3 +275,4 @@ def ai(msg):
 
 # ================== ЗАПУСК ==================
 bot.infinity_polling()
+
